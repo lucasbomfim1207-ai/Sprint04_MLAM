@@ -1,6 +1,7 @@
 # Challenge Sprint 4 — Classificação linear de `Energy_Class`
 
-Dataset: [Renewable Energy Production Dataset (2010–2020)](https://www.kaggle.com/datasets/itsrohithere/renewable-energy-production-dataset-2010-2020/data)
+Dataset: [Renewable Energy Production Dataset (2010–2020)](https://www.kaggle.com/datasets/itsrohithere/renewable-energy-production-dataset-2010-2020/data)  
+[Vídeo Youtube](https://youtu.be/2sS_q7rmYmw)  
 
 ## Integrantes
 | Nome completo | RM |
@@ -17,7 +18,6 @@ Dataset: [Renewable Energy Production Dataset (2010–2020)](https://www.kaggle.
 | `analise_sprint4.py` | Mesmo código em script (`python analise_sprint4.py`) |
 | `figuras/` | Matrizes de correlação (Pearson, Spearman, completa), matrizes de confusão, ablação, comparativos |
 | `resultados/` | CSVs de correlação, seleção de features, métricas por cenário, variabilidade; `saida_execucao.txt` |
-| `requirements.txt` | Dependências |
 
 ## Resumo dos resultados
 - **Encoding:** Low = 0, Medium = 1, High = 2 (alvo ordinal).

@@ -1,0 +1,3 @@
+Cenario,Treino,Teste,Acuracia,Precisao (macro),Recall (macro),Precisao (ponderada),Recall (ponderado)
+Cenario 1 (60/40),600,400,0.925,0.9374,0.9087,0.9272,0.925
+Cenario 2 (85/15),850,150,0.9,0.9177,0.8914,0.9018,0.9

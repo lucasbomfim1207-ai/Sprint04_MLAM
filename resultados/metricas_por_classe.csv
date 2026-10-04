@@ -1,0 +1,7 @@
+Cenario,Classe,Precisao,Recall,F1,Suporte
+Cenario 1 (60/40),Low,1.0,0.8592,0.9242,71.0
+Cenario 1 (60/40),Medium,0.8768,0.903,0.8897,134.0
+Cenario 1 (60/40),High,0.9353,0.9641,0.9495,195.0
+Cenario 2 (85/15),Low,1.0,0.8889,0.9412,27.0
+Cenario 2 (85/15),Medium,0.8571,0.84,0.8485,50.0
+Cenario 2 (85/15),High,0.8961,0.9452,0.92,73.0

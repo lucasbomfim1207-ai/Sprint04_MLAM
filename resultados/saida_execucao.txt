@@ -1,0 +1,137 @@
+Shape: (1000, 11)
+Region                        str
+Energy_Source                 str
+Temperature_C             float64
+Wind_Speed_m_s            float64
+Solar_Radiation_kWh_m2    float64
+Rainfall_mm               float64
+Season                        str
+Efficiency_Ratio          float64
+Lagged_Production_MWh     float64
+Combined_Weather_Index    float64
+Energy_Class                  str
+dtype: object
+Nulos: 0 | Duplicados: 0
+Energy_Class
+High      486
+Medium    336
+Low       178
+Name: count, dtype: int64
+
+Correlacao com o alvo:
+                         Pearson  Spearman  |Spearman|
+Efficiency_Ratio          0.211     0.743       0.743
+Combined_Weather_Index   -0.025    -0.060       0.060
+Rainfall_mm              -0.046    -0.046       0.046
+Wind_Speed_m_s           -0.027    -0.024       0.024
+Lagged_Production_MWh    -0.024    -0.023       0.023
+Temperature_C             0.018     0.010       0.010
+Solar_Radiation_kWh_m2   -0.008    -0.006       0.006
+
+Assimetria (skew):
+ Temperature_C              0.01
+Wind_Speed_m_s            -0.01
+Solar_Radiation_kWh_m2    -0.05
+Rainfall_mm                0.07
+Efficiency_Ratio          20.39
+Lagged_Production_MWh      0.07
+Combined_Weather_Index   -19.51
+dtype: float64
+
+Correlacao categoricas (one-hot) x alvo (Spearman):
+ Efficiency_Ratio          0.743
+Region_North             -0.066
+Combined_Weather_Index   -0.060
+Region_South              0.057
+Rainfall_mm              -0.046
+Season_Monsoon           -0.045
+Season_Spring             0.041
+Energy_Source_Solar      -0.036
+Name: Energy_Class_enc, dtype: float64
+Pearson alvo x log_Efficiency_Ratio: 0.734
+
+Selecao de features (CV 5x3):
+                                  Conjunto de features  N features  Acuracia CV (media)  Desvio
+                        Baseline (classe majoritaria)           0               0.4860  0.0000
+Somente Efficiency_Ratio bruto (maior |r| de Pearson)           1               0.7593  0.0263
+                        Somente log(Efficiency_Ratio)           1               0.7663  0.0238
+        Todas as numericas brutas (sem transformacao)           7               0.7907  0.0295
+                         Todas as numericas (com log)           7               0.9113  0.0197
+           Todas as numericas (com log) + categoricas          10               0.9067  0.0250
+                 Subconjunto selecionado (4 features)           4               0.9167  0.0198
+
+Ablacao (referencia = todas numericas):
+            Feature removida  Queda de acuracia
+       log_Efficiency_Ratio             0.4307
+              Temperature_C             0.1440
+             Wind_Speed_m_s             0.0533
+     Solar_Radiation_kWh_m2             0.0100
+slog_Combined_Weather_Index            -0.0010
+                Rainfall_mm            -0.0017
+      Lagged_Production_MWh            -0.0023
+
+===== Cenario 1 (60/40) =====
+               precision    recall  f1-score   support
+
+         Low     1.0000    0.8592    0.9242        71
+      Medium     0.8768    0.9030    0.8897       134
+        High     0.9353    0.9641    0.9495       195
+
+    accuracy                         0.9250       400
+   macro avg     0.9374    0.9087    0.9211       400
+weighted avg     0.9272    0.9250    0.9250       400
+
+Matriz de confusao (linhas = real, colunas = previsto):
+ [[ 61  10   0]
+ [  0 121  13]
+ [  0   7 188]]
+
+===== Cenario 2 (85/15) =====
+               precision    recall  f1-score   support
+
+         Low     1.0000    0.8889    0.9412        27
+      Medium     0.8571    0.8400    0.8485        50
+        High     0.8961    0.9452    0.9200        73
+
+    accuracy                         0.9000       150
+   macro avg     0.9177    0.8914    0.9032       150
+weighted avg     0.9018    0.9000    0.9000       150
+
+Matriz de confusao (linhas = real, colunas = previsto):
+ [[24  3  0]
+ [ 0 42  8]
+ [ 0  4 69]]
+
+Coeficientes (cenario 2, features padronizadas):
+         log_Efficiency_Ratio  Temperature_C  ...  Solar_Radiation_kWh_m2  intercepto
+Low                   -6.053         -2.479  ...                  -0.577      -2.269
+Medium                -0.407         -0.179  ...                  -0.057       1.808
+High                   6.460          2.658  ...                   0.635       0.462
+
+[3 rows x 5 columns]
+
+Metricas:
+ Cenario               Cenario 1 (60/40)  Cenario 2 (85/15)
+Treino                         600.0000           850.0000
+Teste                          400.0000           150.0000
+Acuracia                         0.9250             0.9000
+Precisao (macro)                 0.9374             0.9177
+Recall (macro)                   0.9087             0.8914
+Precisao (ponderada)             0.9272             0.9018
+Recall (ponderado)               0.9250             0.9000
+
+Por classe:
+           Cenario Classe  Precisao  Recall     F1  Suporte
+Cenario 1 (60/40)    Low    1.0000  0.8592 0.9242     71.0
+Cenario 1 (60/40) Medium    0.8768  0.9030 0.8897    134.0
+Cenario 1 (60/40)   High    0.9353  0.9641 0.9495    195.0
+Cenario 2 (85/15)    Low    1.0000  0.8889 0.9412     27.0
+Cenario 2 (85/15) Medium    0.8571  0.8400 0.8485     50.0
+Cenario 2 (85/15)   High    0.8961  0.9452 0.9200     73.0
+
+Variabilidade (200 particoes):
+ Teste  Media  Desvio    Min    Max
+  40% 0.9149  0.0127 0.8850 0.9475
+  15% 0.9166  0.0222 0.8667 0.9733
+
+Concluido.

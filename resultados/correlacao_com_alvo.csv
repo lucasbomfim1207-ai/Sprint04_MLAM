@@ -1,0 +1,8 @@
+,Pearson,Spearman,|Spearman|
+Efficiency_Ratio,0.2112,0.7432,0.7432
+Combined_Weather_Index,-0.0245,-0.06,0.06
+Rainfall_mm,-0.046,-0.0462,0.0462
+Wind_Speed_m_s,-0.0271,-0.0242,0.0242
+Lagged_Production_MWh,-0.0237,-0.0228,0.0228
+Temperature_C,0.0177,0.0099,0.0099
+Solar_Radiation_kWh_m2,-0.0079,-0.0064,0.0064

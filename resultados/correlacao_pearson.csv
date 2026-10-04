@@ -1,0 +1,9 @@
+,Temperature_C,Wind_Speed_m_s,Solar_Radiation_kWh_m2,Rainfall_mm,Efficiency_Ratio,Lagged_Production_MWh,Combined_Weather_Index,Energy_Class_enc
+Temperature_C,1.0,0.0501,-0.0059,0.0344,-0.2599,-0.0093,0.0473,0.0177
+Wind_Speed_m_s,0.0501,1.0,-0.0264,0.0229,-0.1865,0.0338,-0.0077,-0.0271
+Solar_Radiation_kWh_m2,-0.0059,-0.0264,1.0,-0.0172,-0.0938,-0.0076,0.0452,-0.0079
+Rainfall_mm,0.0344,0.0229,-0.0172,1.0,-0.022,-0.016,-0.0102,-0.046
+Efficiency_Ratio,-0.2599,-0.1865,-0.0938,-0.022,1.0,-0.0298,-0.0215,0.2112
+Lagged_Production_MWh,-0.0093,0.0338,-0.0076,-0.016,-0.0298,1.0,-0.0631,-0.0237
+Combined_Weather_Index,0.0473,-0.0077,0.0452,-0.0102,-0.0215,-0.0631,1.0,-0.0245
+Energy_Class_enc,0.0177,-0.0271,-0.0079,-0.046,0.2112,-0.0237,-0.0245,1.0

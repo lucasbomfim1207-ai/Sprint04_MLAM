@@ -1,0 +1,8 @@
+Feature removida,Queda de acuracia
+log_Efficiency_Ratio,0.4307
+Temperature_C,0.144
+Wind_Speed_m_s,0.0533
+Solar_Radiation_kWh_m2,0.01
+slog_Combined_Weather_Index,-0.001
+Rainfall_mm,-0.0017
+Lagged_Production_MWh,-0.0023

@@ -1,0 +1,8 @@
+Conjunto de features,N features,Acuracia CV (media),Desvio
+Baseline (classe majoritaria),0,0.486,0.0
+Somente Efficiency_Ratio bruto (maior |r| de Pearson),1,0.7593,0.0263
+Somente log(Efficiency_Ratio),1,0.7663,0.0238
+Todas as numericas brutas (sem transformacao),7,0.7907,0.0295
+Todas as numericas (com log),7,0.9113,0.0197
+Todas as numericas (com log) + categoricas,10,0.9067,0.025
+Subconjunto selecionado (4 features),4,0.9167,0.0198

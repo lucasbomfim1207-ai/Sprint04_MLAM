@@ -3,7 +3,11 @@
 Dataset: [Renewable Energy Production Dataset (2010–2020)](https://www.kaggle.com/datasets/itsrohithere/renewable-energy-production-dataset-2010-2020/data)
 
 ## Integrantes
-
+| Nome completo | RM |
+|---|---|
+| Eduardo Barcelos De Carvalho Braziliano | 573274 |
+| Julia Johanson Peniche Dias Da Silva | 572220 |
+| Lucas Bomfim Leite | 570420 |
 
 ## Estrutura
 | Caminho | Conteúdo |
